@@ -202,9 +202,13 @@ def build_cli():
     return p
 
 def run_defaults_here():
-    here=os.path.dirname(os.path.abspath(__file__))
+    if getattr(sys, 'frozen', False):  # 如果是 exe 模式
+        here = os.path.dirname(sys.executable)
+    else:                              # 如果是 py 模式
+        here = os.path.dirname(os.path.abspath(__file__))
+
     task_a(here, os.path.join(here,'out','a'))
-    task_b(here, os.path.join(here,'out','b'), [0.5,1.0,2.0])
+    task_b(here, os.path.join(here,'out','b'), [0.5, 1.0, 2.0])
     task_c(here, os.path.join(here,'out','c'))
 
 def main(argv:List[str])->int:
@@ -216,5 +220,7 @@ def main(argv:List[str])->int:
     elif args.cmd=='c': task_c(args.data,args.out)
     else: print("需要子命令 a/b/c"); return 1
     return 0
+
+
 
 if __name__=='__main__': raise SystemExit(main(sys.argv[1:]))
