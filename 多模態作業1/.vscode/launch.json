@@ -1,0 +1,51 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "HW1 - a 讀檔+中心10x10",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/HW1.py",
+            "args": [
+                "a",
+                "--data",
+                ".",
+                "--out",
+                "./out/a"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "HW1 - b 點運算",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/HW1.py",
+            "args": [
+                "b",
+                "--data",
+                ".",
+                "--out",
+                "./out/b",
+                "--gamma",
+                "0.5",
+                "1.0",
+                "2.0"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "HW1 - c 重採樣",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/HW1.py",
+            "args": [
+                "c",
+                "--data",
+                ".",
+                "--out",
+                "./out/c"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}
